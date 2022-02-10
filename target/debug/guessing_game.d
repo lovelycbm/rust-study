@@ -1,1 +1,1 @@
-/Users/genie/Documents/rust-study/hello_cargo/target/debug/guessing_game: /Users/genie/Documents/rust-study/hello_cargo/src/main.rs
+/Users/genie/Documents/rust-study/target/debug/guessing_game: /Users/genie/Documents/rust-study/src/main.rs
