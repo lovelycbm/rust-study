@@ -1,19 +1,39 @@
-fn main() {       
-    let mut s = String::from("Hello world");
-    
-    let word = first_word(&s);
-    s.clear();
-    println!("{}", word);
+struct  User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
 }
 
-fn first_word(s: &String)-> &str {
-    let bytes = s.as_bytes();
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
 
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[0..i];
-        }
+fn main() {       
+    let mut user1 = User {
+        email : String::from("lovelycbm@naver.com"),
+        username : String::from("lovelycbm"),
+        sign_in_count : 1,
+        active : true
+    };
+    
+    user1.email = String::from("lovelybm@hanmail.net");
+    
+    let user2 = User {
+        email : String::from("test@test.com"),
+        username : String::from("test"),
+        ..user1
+    };
+
+    let black = Color(0, 0, 0);
+    let origin = PointI(0,0,0);
+}
+
+
+fn build_user(email:String, username:String) -> User {
+    User {
+        email,
+        username,
+        active: true,
+        sign_in_count: 1,
     }
-
-    &s[..]
 }
