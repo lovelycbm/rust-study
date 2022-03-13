@@ -1,12 +1,19 @@
-
-fn main() {   
-    let x = plus_one(5);
-
-    println!("The value of x is {}",x);
+fn main() {       
+    let mut s = String::from("Hello world");
+    
+    let word = first_word(&s);
+    s.clear();
+    println!("{}", word);
 }
 
-fn plus_one(x: i32) -> i32 {
-    // 반환 부분이 세미콜론이 없는것으로 이해하면 됨.
-    let y = x+1;
-    y
+fn first_word(s: &String)-> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
